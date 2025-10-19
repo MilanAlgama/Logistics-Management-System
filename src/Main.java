@@ -1,15 +1,71 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner input = new Scanner(System.in);
+        System.out.println("-----Welcome to Logistics Management System-----");
+        System.out.println("1. Manage Cities");
+        System.out.println("2. Manage Distances");
+        System.out.println("3. View Vehicle Details");
+        System.out.println("4. Handle Delivery Request");
+        System.out.println("5. View Delivery Records");
+        System.out.println("6. Show Performance Reports");
+        System.out.println("0. Save and Exit ");
+        System.out.print("Enter your choice: ");
+        int choice = input.nextInt();
+        switch (choice) {
+            case 1 -> manageCities(input);
+            case 2 -> manageDistances(input);
+            case 3 -> vehicleDetails(input);
+            case 4 -> deliveryRequests(input);
+            case 5 -> deliveryRecords(input);
+            case 6 -> performanceReport(input);
+            case 0 -> System.out.println("Save and Exit ");
+            default -> System.out.println("Invalid choice");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
         }
     }
+    // Cities management
+    public static void manageCities(Scanner input){
+        //This is the sub menu including the adding,removing and renaming cities
+
+    }
+
+    // Distance management
+    public static void manageDistances(Scanner input){
+        //This is the sub menu including the intercity distances
+    }
+
+    //Vehicle management
+    public static void vehicleDetails(Scanner input){
+        //This is the sub menu including the Vehicle type, Capacity (kg), Rate per km (LKR), Avg Speed (km/h) and Fuel Efficiency (km/l)
+    }
+
+    //Delivery Request Handling
+    public static void deliveryRequests(Scanner input){
+        //This is the sub menu handling the requests received from the user and display the charge for the relevant delivery
+    }
+
+    //Delivery records
+    public static void deliveryRecords(Scanner input){
+        //This is the sub menu to view the history of deliveries
+    }
+
+    //Performance report
+    public static void performanceReport(Scanner input){
+        //This is the sub menu can be use to obtain report of the process at the time
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

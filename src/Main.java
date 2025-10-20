@@ -17,8 +17,6 @@ public class Main {
         Scanner input = new Scanner(System.in);
         int choice;
         do{
-            input.nextLine();
-            input.nextLine();
             System.out.println("-----Welcome to Logistics Management System-----");
             System.out.println("1. Manage Cities");
             System.out.println("2. Manage Distances");
@@ -38,6 +36,7 @@ public class Main {
                 case 6 -> performanceReport(input);
                 case 0 -> System.out.println("Save and Exit ");
                 default -> System.out.println("Invalid choice");
+
             }
         }while(choice !=0);
 
@@ -59,14 +58,6 @@ public class Main {
             System.out.print("Enter your choice: ");
             cityChoice = input.nextInt();
 
-            //check the validity of input
-            if (cityChoice == 1 || cityChoice == 2 || cityChoice == 3 || cityChoice == 4 || cityChoice == 0) {
-                input.nextLine();
-                break;
-            } else {
-                System.out.println("Invalid input, Please try again!!");
-
-            }
         }while(cityChoice != 0);
 
             //Sub choices of the Manage Cities
@@ -96,6 +87,7 @@ public class Main {
             Cities[cityCounter] = newCity;
             cityCounter++;
             System.out.println("City added successfully!");
+
         }
 
     }
@@ -119,13 +111,29 @@ public class Main {
 
         Cities[cityNumber-1] = newCity;
         System.out.println("City renamed successfully!");
+
     }
 
     public static void removeCity(Scanner input){
         //Method of removing an existing city from the system
+        allCities(input);
+        System.out.print("Enter the number of the city you want to remove: ");
+        int cityNumber = input.nextInt();
+        input.nextLine();
+
+        //Check the validity of the number
+        if(cityNumber < 0 || cityNumber >= cityCounter){
+            System.out.println("Error! Invalid number");
+            return;
+        }
+        for(int i = cityNumber-1; i < cityCounter-1; i++){
+            Cities[i]=Cities[i+1];
+        }cityCounter--;
+        System.out.println("City removed successfully!");
+
     }
 
-    private static void allCities(Scanner input){
+    public static void allCities(Scanner input){
         //Method of displaying all the cities in the system
         System.out.println("\n---List of all cities---");
         for(int i = 0; i < cityCounter; i++){

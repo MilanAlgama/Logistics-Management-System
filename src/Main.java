@@ -15,27 +15,30 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        System.out.println("-----Welcome to Logistics Management System-----");
-        System.out.println("1. Manage Cities");
-        System.out.println("2. Manage Distances");
-        System.out.println("3. View Vehicle Details");
-        System.out.println("4. Handle Delivery Request");
-        System.out.println("5. View Delivery Records");
-        System.out.println("6. Show Performance Reports");
-        System.out.println("0. Save and Exit ");
-        System.out.print("Enter your choice: ");
-        int choice = input.nextInt();
-        switch (choice) {
-            case 1 -> manageCities(input);
-            case 2 -> manageDistances(input);
-            case 3 -> vehicleDetails(input);
-            case 4 -> deliveryRequests(input);
-            case 5 -> deliveryRecords(input);
-            case 6 -> performanceReport(input);
-            case 0 -> System.out.println("Save and Exit ");
-            default -> System.out.println("Invalid choice");
+        int choice;
+        do{
+            System.out.println("-----Welcome to Logistics Management System-----");
+            System.out.println("1. Manage Cities");
+            System.out.println("2. Manage Distances");
+            System.out.println("3. View Vehicle Details");
+            System.out.println("4. Handle Delivery Request");
+            System.out.println("5. View Delivery Records");
+            System.out.println("6. Show Performance Reports");
+            System.out.println("0. Save and Exit ");
+            System.out.print("Enter your choice: ");
+            choice = input.nextInt();
+            switch (choice) {
+                case 1 -> manageCities(input);
+                case 2 -> manageDistances(input);
+                case 3 -> vehicleDetails(input);
+                case 4 -> deliveryRequests(input);
+                case 5 -> deliveryRecords(input);
+                case 6 -> performanceReport(input);
+                case 0 -> System.out.println("Save and Exit ");
+                default -> System.out.println("Invalid choice");
+            }
+        }while(choice !=0);
 
-        }
     }
     // Cities management
     public static void manageCities(Scanner input) {
@@ -93,7 +96,6 @@ public class Main {
             System.out.println("City added successfully!");
         }
 
-
     }
 
     public static void renameCity(Scanner input){
@@ -106,6 +108,11 @@ public class Main {
 
     public static void allCities(Scanner input){
         //Method of displaying all the cities in the system
+        System.out.println("\n---List of all cities---");
+        for(int i = 0; i < cityCounter; i++){
+            System.out.println(i+1 + ":   "+Cities[i]);
+        }
+        System.out.println(".....................................");
     }
 //-------------------------------------------------------------------------------------------------------------------------------------------
     // Distance management

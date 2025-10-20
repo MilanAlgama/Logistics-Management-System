@@ -17,6 +17,8 @@ public class Main {
         Scanner input = new Scanner(System.in);
         int choice;
         do{
+            input.nextLine();
+            input.nextLine();
             System.out.println("-----Welcome to Logistics Management System-----");
             System.out.println("1. Manage Cities");
             System.out.println("2. Manage Distances");
@@ -100,13 +102,30 @@ public class Main {
 
     public static void renameCity(Scanner input){
         //Method of renaming an existing city from the system
+        allCities(input);
+        System.out.print("Enter the number of the city: ");
+        int cityNumber = input.nextInt();
+        input.nextLine();
+
+        //Check the validity of the number
+        if(cityNumber < 0 || cityNumber >= cityCounter){
+            System.out.println("Error! Invalid number");
+            return;
+        }
+
+        String oldCity = Cities[cityNumber-1];
+        System.out.print("Enter a new name for the "+oldCity+" :");
+        String newCity = input.nextLine();
+
+        Cities[cityNumber-1] = newCity;
+        System.out.println("City renamed successfully!");
     }
 
     public static void removeCity(Scanner input){
         //Method of removing an existing city from the system
     }
 
-    public static void allCities(Scanner input){
+    private static void allCities(Scanner input){
         //Method of displaying all the cities in the system
         System.out.println("\n---List of all cities---");
         for(int i = 0; i < cityCounter; i++){

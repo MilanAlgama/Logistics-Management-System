@@ -7,7 +7,7 @@ public class Main {
 
     //Arrays and variables used for Deliveries
     public static String[] deliveries = new String[50];
-    public static int deliveryCouter = 0;
+    public static int deliveryCounter = 0;
 
 
 
@@ -38,15 +38,62 @@ public class Main {
         }
     }
     // Cities management
-    public static void manageCities(Scanner input){
+    public static void manageCities(Scanner input) {
         //This is the sub menu including the adding,removing and renaming cities
-        int i = 0;
+        int cityChoice;
+
+        //New line
+        input.nextLine();
         do{
-            
-        }while(i != 0);
+            System.out.println("\n-----Manage Cities-----");
+            System.out.println("1. Add a new city");
+            System.out.println("2. Rename a city");
+            System.out.println("3. Remove a city");
+            System.out.println("4. View all cities");
+            System.out.println("0. Back to Main Menu");
+            System.out.print("Enter your choice: ");
+            cityChoice = input.nextInt();
+
+            //check the validity of input
+            if (cityChoice == 1 || cityChoice == 2 || cityChoice == 3 || cityChoice == 4 || cityChoice == 0) {
+                input.nextLine();
+                break;
+            } else {
+                System.out.println("Invalid input, Please try again!!");
+
+            }
+        }while(cityChoice != 0);
+
+            //Sub choices of the Manage Cities
+            switch(cityChoice){
+                case 1 -> addNewcity(input);
+                case 2 -> renameCity(input);
+                case 3 -> removeCity(input);
+                case 4 -> allCities(input);
+                case 0 -> System.out.println("Back to the Main Menu... ");
+                default -> System.out.println("Invalid choice!!!");
+            }
+
+
+
+    }
+    public static void addNewcity(Scanner input){
+        //Method of adding new city to the system
 
     }
 
+    public static void renameCity(Scanner input){
+        //Method of renaming an existing city from the system
+    }
+
+    public static void removeCity(Scanner input){
+        //Method of removing an existing city from the system
+    }
+
+    public static void allCities(Scanner input){
+        //Method of displaying all the cities in the system
+    }
+//-------------------------------------------------------------------------------------------------------------------------------------------
     // Distance management
     public static void manageDistances(Scanner input){
         //This is the sub menu including the intercity distances
@@ -69,7 +116,7 @@ public class Main {
 
     //Performance report
     public static void performanceReport(Scanner input){
-        //This is the sub menu can be use to obtain report of the process at the time
+        //This is the sub menu can be used to obtain report of the process at the time
     }
 
 

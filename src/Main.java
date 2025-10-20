@@ -79,6 +79,20 @@ public class Main {
     }
     public static void addNewcity(Scanner input){
         //Method of adding new city to the system
+        //check the capacity and the availability of the duplicates
+        if(cityCounter >= Cities.length){
+            System.out.println("Error! City limit is exceeded");
+            return;
+        }else {
+            System.out.println("Enter the name of the city");
+            String newCity = input.nextLine();
+
+            //Add the city
+            Cities[cityCounter] = newCity;
+            cityCounter++;
+            System.out.println("City added successfully!");
+        }
+
 
     }
 

@@ -1,6 +1,18 @@
 import java.util.Scanner;
 
 public class Main {
+    // Arrays and Variables used for Cities
+    public static String[] Cities = new String[30];
+    public static int cityCounter = 0;
+
+    //Arrays and variables used for Deliveries
+    public static String[] deliveries = new String[50];
+    public static int deliveryCouter = 0;
+
+
+
+
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("-----Welcome to Logistics Management System-----");
@@ -28,6 +40,10 @@ public class Main {
     // Cities management
     public static void manageCities(Scanner input){
         //This is the sub menu including the adding,removing and renaming cities
+        int i = 0;
+        do{
+            
+        }while(i != 0);
 
     }
 
